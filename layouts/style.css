@@ -1,0 +1,157 @@
+:root {
+    --primary-color: rgba(0, 87, 183, 1);
+    --secondary-color: rgba(255, 204, 0, 1);
+    --text-color: black;
+    --tooltip-bg: rgba(255, 204, 0, 1);
+    --tooltip-text: #111;
+    --outline-color: green;
+    --border-color: black;
+
+    --font-size-base: 16px;
+    --font-size-h1-huge: 6rem;
+    --font-size-h1-big: 4rem;
+    --font-size-h1: 3rem;
+    --font-size-h2: 2.5rem;
+    --font-size-h3: 2rem;
+    --font-size-bigger: 1.5rem;
+    --font-size-accent: 1.2rem;
+    --font-size-basic: 1rem;
+}
+
+@font-face {
+    font-family: 'KyivTypeSans';
+    src: local('KyivTypeSans-VarGX'), url('/font/KyivTypeSans-VarGX.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KyivTypeSerif';
+    src: local('KyivTypeSerif-VarGX'), url('/font/KyivTypeSerif-VarGX.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KyivTypeTitling';
+    src: local('KyivTypeTitling-VarGX'), url('/font/KyivTypeTitling-VarGX.ttf');
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+::selection {
+    background: var(--secondary-color);
+}
+
+::backdrop {
+    background: var(--primary-color);
+    opacity: 0.75;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    font-family: 'KyivTypeSans', Arial, Helvetica, sans-serif;
+    background-color: var(--primary-color);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    border: var(--border-width) solid var(--border-color);
+    padding: var(--padding-button);
+    background-color: var(--secondary-color);
+    min-width: 32px;
+    cursor: pointer;
+}
+
+*:focus-visible {
+    outline: 4px solid var(--outline-color);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+html {
+    font-size: var(--font-size-base);
+    background-color: var(--primary-color);
+}
+
+a {
+    color: var(--text-color);
+}
+
+a:hover {
+    color: var(--secondary-color) !important;
+}
+
+a:visited {
+    color: var(--text-color);
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    line-height: var(--font-size-h1);
+    color: var(--text-color);
+    font-family: 'KyivTypeSerif', Georgia, serif;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    line-height: var(--font-size-h2);
+    color: var(--text-color);
+    font-family: 'KyivTypeSans', Arial, sans-serif;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+    line-height: var(--font-size-h3);
+    color: var(--text-color);
+    font-family: 'KyivTypeSans', Arial, sans-serif;
+    font-weight: 600;
+}

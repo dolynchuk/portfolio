@@ -1,0 +1,491 @@
+.mainPage {
+    position: relative;
+    overflow: hidden;
+}
+
+.mainPageInfo {
+    margin-right: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.mainPageInfoBackdrop {
+    background-color: white;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+    position: absolute;
+    opacity: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 20%, rgba(255, 255, 255, 0) 100%);
+    transition: opacity 2s ease-in-out;
+}
+
+.mainPageInfo>section {
+    position: relative;
+    z-index: 2;
+}
+
+.backdropVisible {
+    opacity: 1;
+}
+
+.heroContainer {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+@keyframes removePixelate {
+    from {
+        filter: url(#pixelate);
+    }
+
+    to {
+        filter: none;
+    }
+}
+
+.tools {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+
+/* LAYOUT CHANGE */
+.mainPageRow {
+    flex-direction: column;
+}
+
+.mainPageInfo {
+    max-width: 600px;
+    overflow: hidden;
+}
+
+
+/* LAYOUT CHANGE */
+
+
+.heroContainerImage {
+    animation: imageSlide 10s infinite alternate ease-in-out;
+    animation-delay: 1s;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    z-index: -1;
+    position: absolute;
+    filter: url(#pixelate);
+    top: 0;
+    right: -10%;
+    width: 140%;
+    bottom: 0;
+    transition: all 1s;
+    will-change: transform;
+}
+
+.heroContainerImage img {
+    width: 100%;
+}
+
+.loaderContainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin-left: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    font-weight: 900;
+}
+
+@media screen and (max-width: 1000px) {
+    .loaderContainer {
+        margin-left: 0;
+    }
+}
+
+
+.loaderText {
+    mix-blend-mode: difference;
+    opacity: 1;
+    filter: url(#invertFilter) hue-rotate(90deg);
+    background: black;
+    color: white;
+    background-blend-mode: difference;
+    -webkit-text-stroke: 4px;
+    -webkit-text-stroke-color: BLUE;
+    padding: 10%;
+    transition: all 1s ease-out;
+    border-radius: 50%;
+}
+
+.loaderText.hidden {
+    opacity: 0;
+}
+
+.spline {
+    opacity: 0;
+    transition: all 2s ease-in;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: auto !important;
+    margin-left: 400px;
+}
+
+@media screen and (max-width: 1000px) {
+    .spline {
+        margin-left: 0;
+    }
+}
+
+.splineLoaded {
+    opacity: 1;
+}
+
+.secondTitle {
+    color: var(--secondary-color);
+    padding: 16px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-weight: 800;
+}
+
+
+.splineLoading {
+    filter: blur(10px);
+}
+
+@keyframes fudge {
+    from {
+        transform: translate(0px, 0px);
+    }
+
+    to {
+        transform: translate(0px, 2%);
+    }
+}
+
+
+.marquee {
+    list-style: none;
+    display: flex;
+}
+
+.mainLinks {
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+
+.mainLinks ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+}
+
+.copyButton {
+    width: 48px;
+    height: 48px;
+}
+
+.sectionHeader {
+    color: var(--secondary-color);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-weight: 800;
+    font-size: var(--font-size-h2);
+}
+
+#career.sectionHeader {
+    padding-top: 32px;
+}
+
+.arrowScroll {
+    position: fixed;
+    height: 48px;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100px;
+    background: transparent;
+    border-color: white;
+    color: white;
+    border-radius: 20px;
+    padding: 6px;
+    animation: arrowAnim 3s infinite;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 1000px) {
+    .arrowScroll {
+        bottom: 0;
+        border: 0;
+    }
+}
+
+.arrowScrollHidden {
+    opacity: 0;
+}
+
+@keyframes arrowAnim {
+    0% {
+        color: white;
+        border-color: white;
+    }
+
+    50% {
+        color: black;
+        border-color: black;
+    }
+
+    100% {
+        color: white;
+        border-color: white;
+    }
+}
+
+.arrowScroll svg {
+    height: 32px;
+}
+
+.copyButton:hover {
+    background: var(--secondary-color);
+    ;
+}
+
+.careerSection {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 16px;
+    max-width: 600px;
+}
+
+.landingSection {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    max-width: 600px;
+}
+
+.teachingSection {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 16px;
+    max-width: 600px;
+}
+
+.educationSection {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 16px;
+    max-width: 600px;
+}
+
+.mainLinks ul li {
+    display: flex;
+    align-items: center;
+}
+
+.mainLinks a {
+    padding: 4px 8px;
+    font-size: var(--font-size-bigger);
+    color: var(--text-color) !important;
+    background: var(--secondary-color);
+    ;
+    font-weight: 800;
+    border: 2px solid black;
+    text-align: center;
+}
+
+
+.mainLinks .mainLink {
+    padding: 4px 8px;
+    font-size: var(--font-size-bigger);
+    color: var(--text-color) !important;
+    background: var(--secondary-color);
+    ;
+    font-weight: 800;
+    border: 2px solid black;
+}
+
+.mainLinks .mainLink:hover {
+    background: white;
+}
+
+.mainLinks .mainLink:focus {
+    background: white;
+}
+
+.mainLinks a:hover {
+    background: white;
+    color: var(--text-color) !important;
+}
+
+
+.mainLinks a:focus {
+    background: white;
+    color: var(--text-color) !important;
+}
+
+
+.marquee li {
+    list-style-type: none;
+    font-size: var(--font-size-bigger);
+    color: var(--secondary-color);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-weight: 800;
+    flex-direction: row;
+    margin-right: 16px;
+}
+
+.marquee li:first-of-type {
+    margin-right: 28px;
+}
+
+.mainMessage {
+    padding: 0px 16px;
+    font-size: var(--font-size-bigger);
+    line-height: var(--font-size-bigger);
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+@media screen and (max-width: 1000px) {
+    .mainMessage {
+        font-size: var(--font-size-accent);
+        line-height: var(--font-size-accent);
+    }
+
+    .secondTitle {
+        font-size: var(--font-size-h3);
+        line-height: var(--font-size-h3);
+    }
+
+    .mainLinks a {
+        font-size: var(--font-size-accent);
+        line-height: var(--font-size-accent);
+    }
+}
+
+.mainMessageContent {
+    background-color: white;
+    border: 2px solid black;
+    padding: 4px 0;
+    line-height: 1.2;
+}
+
+.mainMessage p {
+    display: block;
+    padding: 4px 8px;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}
+
+.marqueeContainer {
+    top: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding: 10px 0;
+    box-sizing: border-box;
+    width: 100%;
+    z-index: 0;
+}
+
+@media screen and (max-width: 1000px) {
+    .marqueeContainer {
+        position: absolute;
+    }
+}
+
+.teamName {
+    font-size: var(--font-size-basic);
+    background-color: white;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-weight: 500;
+}
+
+.years {
+    font-size: var(--font-size-basic);
+    background-color: white;
+    padding-left: 8px;
+    padding-right: 8px;
+    display: flex;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.description p {
+    display: block;
+    padding: 4px 8px;
+    margin-bottom: 8px;
+}
+
+.faculty {
+    font-size: var(--font-size-basic);
+    background-color: white;
+    padding: 4px 8px;
+    font-weight: 500;
+}
+
+.years {
+    font-size: var(--font-size-basic);
+    background-color: white;
+    padding: 4px 8px;
+}
+
+.description {
+    font-size: var(--font-size-bigger);
+    background-color: white;
+    white-space: break-spaces;
+    border-top: 2px solid black;
+}
+
+@media screen and (max-width: 1000px) {
+    .description {
+        font-size: var(--font-size-accent);
+        line-height: var(--font-size-accent);
+    }
+}
