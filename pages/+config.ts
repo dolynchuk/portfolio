@@ -13,5 +13,4 @@ export default {
 
   extends: vikeReact,
   prerender: true,
-  ssr: false,
 } satisfies Config;
