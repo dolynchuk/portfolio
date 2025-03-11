@@ -9,6 +9,8 @@ export default function HeadDefault() {
       <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="theme-color" content="white" />
+      <link rel="preconnect" href="https://prod.spline.design" crossorigin />
+      <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
       <link
         rel="preload"
         href={`${base}font/KyivTypeSans-VarGX.ttf`}
