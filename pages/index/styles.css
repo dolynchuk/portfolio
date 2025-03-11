@@ -109,6 +109,7 @@
     align-items: center;
     justify-content: center;
     font-size: 5rem;
+    line-height: 5rem;
     font-weight: 900;
 }
 
@@ -204,9 +205,9 @@
   }
 
 .marquee-items {
+    padding: 0;
     display: flex;
     flex-direction: row;
-    padding: 0;
 }
 
 .marquee li {
@@ -430,7 +431,6 @@
     background-color: white;
     border: 2px solid black;
     padding: 4px 0;
-    line-height: 1.2;
 }
 
 .mainMessage p {
@@ -486,7 +486,6 @@
 .description p {
     display: block;
     padding: 4px 8px;
-    margin-bottom: 8px;
 }
 
 .faculty {
@@ -504,9 +503,11 @@
 
 .description {
     font-size: var(--font-size-bigger);
+    line-height: var(--font-size-bigger);
     background-color: white;
     white-space: break-spaces;
     border-top: 2px solid black;
+    margin-bottom: 8px;
 }
 
 @media screen and (max-width: 1000px) {

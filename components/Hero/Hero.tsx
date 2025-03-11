@@ -18,7 +18,7 @@ export function Hero() {
     }
 
     const canvas = document.getElementsByTagName('canvas')[0];
-    canvas.addEventListener("wheel", listener, { passive: false, signal: abortController.signal });
+    canvas.addEventListener("wheel", listener, { passive: true, signal: abortController.signal });
 
     return () => {
       abortController.abort();
