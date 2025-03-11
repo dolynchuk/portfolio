@@ -466,6 +466,11 @@ footer p {
     canvas {
         height: calc(100% + 64px) !important;
     }
+
+    footer {
+        font-size: var(--font-size-accent);
+        line-height: var(--font-size-accent);
+    }
 }
 
 
