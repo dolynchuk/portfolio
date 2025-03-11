@@ -86,7 +86,7 @@ export function MainPageInfo() {
           <h5 className="teamName">Inventory Routing & Replenishment team</h5>
           <span className="years">2022-2025</span>
           <div className="description">
-            <p>• Working on Wolt market purchasing service app for stores</p>
+            <p>• Working on purchasing app for stores</p>
             <p>• Leading major FE infrastructure updates across organization</p>
             <p>• Developing component system with design system tokens integration</p>
             <p>• Hiring and mentoring new team members</p>
@@ -96,9 +96,9 @@ export function MainPageInfo() {
           <h5 className="teamName">Middleware team</h5>
           <span className="years">2021-2022</span>
           <div className="description">
-            <p>• Developing high performance data processing services with AWS using GO, Terraform and Docker</p>
+            <p>• Developing high performance data processing services using AWS, GO, Terraform and Docker</p>
             <p>• Creating internal tool for managing API specs</p>
-            <p>• Implementing data pipeline component system in GO with live data streaming capabilities</p>
+            <p>• Implementing data pipeline components with live data streaming capabilities using GO</p>
           </div>
         </Card>
         <Card
@@ -108,10 +108,10 @@ export function MainPageInfo() {
           <h5 className="teamName">Cortex Data Science / ML research team</h5>
           <span className="years">2019 - 2021</span>
           <div className="description">
-            <p>• Planning and developing ML training set data management platform</p>
-            <p>• Managing CI/CD pipelines with Docker containers for platform deployment</p>
-            <p>• Managing databases and processing queues to automate model learning</p>
-            <p>• Developing React app for quick training set answers and statistics</p>
+            <p>• Planning and developing Machine Learning data management platform</p>
+            <p>• Managing deployment CI/CD pipelines using Docker and Jenkins</p>
+            <p>• Managing database and processing queues to automate model learning</p>
+            <p>• Developing React app for collecting training sets and answers comparison</p>
           </div>
         </Card>
         <Card
@@ -121,12 +121,11 @@ export function MainPageInfo() {
           <h5 className="teamName">Search team</h5>
           <span className="years">2017 - 2019</span>
           <div className="description">
-            <p>• Working on ad campaign management app for business partners</p>
-            <p>• Integration for third-party payment system for website</p>
+            <p>• Working on B2B app for ad campaigns management</p>
+            <p>• Third-party payment system integration</p>
             <p>• Working on seamless gradual Refactoring from jQuery and PHP to React SSR App with Python API</p>
-            <p>• Improvements and optimization for interactive maps with buildings 3D models for whole city</p>
-            <p>• Migration from Google Maps to OpenStreetMap based map engine</p>
-            <p>• Design system implementation with shared components</p>
+            <p>• Improvements and optimization for interactive maps with 3D models with big datasets</p>
+            <p>• Participated in migration from Google Maps to MapBox</p>
           </div>
         </Card>
       </section>
