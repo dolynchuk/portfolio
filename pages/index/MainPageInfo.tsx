@@ -58,20 +58,22 @@ export function MainPageInfo() {
         <h2 className="secondTitle">
           <span className="jobTitle">Front End Engineer</span>
         </h2>
-        <div className="mainMessage">
-          <div className="mainMessageContent">
-            <p>Building high-quality web interfaces with a creative touch</p>
-            <p>8 years of experience in Prop-Tech, Machine Learning, Analytics, Food Delivery and SAAS</p>
-            <p>Based in Berlin, born in Ukraine</p>
+        <div className="mainMessageStack">
+          <div className="mainMessage">
+            <div className="mainMessageContent">
+              <p>Building high-quality web interfaces with a creative touch</p>
+              <p>8 years of experience in Prop-Tech, Machine Learning, Analytics, Food Delivery and SAAS</p>
+              <p>Based in Berlin, born in Ukraine</p>
+            </div>
           </div>
-        </div>
-        <div className="mainLinks">
-          <a href="https://calendly.com/dolinchuk2000/15min" target="_blank" rel="noopener noreferrer">
-            Schedule call
-          </a>
-          <a href="https://www.linkedin.com/in/maksym-d-13283b110/" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
+          <div className="mainLinks">
+            <a href="https://calendly.com/dolinchuk2000/15min" target="_blank" rel="noopener noreferrer">
+              Schedule call
+            </a>
+            <a href="https://www.linkedin.com/in/maksym-d-13283b110/" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          </div>
         </div>
         <button className="arrowScroll" arial-label="Scroll down" ref={buttonRef} onClick={handleScrollClick}><ArrowScroll /></button>
       </section>
@@ -199,6 +201,24 @@ export function MainPageInfo() {
           </div>
         </Card>
       </section>
+      <footer>
+        <p>If you reached down here, youre probably interested in my experience or looking for something else</p>
+        <p>Anyways, lets get in contact, would be happy to talk!</p>
+        <div>
+          <a href="https://calendly.com/dolinchuk2000/15min" target="_blank" rel="noopener noreferrer">
+            Schedule call
+        </a>
+          <a href="https://www.linkedin.com/in/maksym-d-13283b110/" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+        </div>
+        <div>
+          <p>You can also reach me by email:</p>
+          <a href="mailto:dolinchuk2000@gmail.com">dolinchuk2000@gmail.com</a>
+        </div>
+        <p className="credits">Made with ♥ by Maksym Dolynchuk</p>
+        <p>Have a nice day!</p>
+      </footer>
     </section>
   )
 }
