@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { windowsPixelNightBase64 } from "./windowsPixelNightBase64";
 
 export function HeroImageNight() {
 
@@ -36,5 +37,5 @@ export function HeroImageNight() {
     }, []);
 
 
-    return <div className="heroBackgroundImage imageNight" ref={rootRef}><img src="/windowspixelnight.png" alt="" /></div>
+    return <div className="heroBackgroundImage imageNight" ref={rootRef}><img src={windowsPixelNightBase64} alt="" /></div>
 }

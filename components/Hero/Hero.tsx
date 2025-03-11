@@ -2,6 +2,7 @@ import Spline from '@splinetool/react-spline';
 import { useEffect, useRef, useState } from 'react';
 import { HeroImageNight } from './HeroImageNight';
 import './styles.css'
+import { windowsPixelBase64 } from './windowsPixelBase64';
 
 
 
@@ -27,7 +28,7 @@ export function Hero() {
   return (
     <div className="heroContainerContent">
       <div className="heroBackgroundImage">
-        <img src="/windowspixel.png" alt="" />
+        <img src={windowsPixelBase64} alt="" />
       </div>
       <HeroImageNight />
       <div className="loaderContainer">
@@ -42,6 +43,6 @@ export function Hero() {
           }
         }}
       />
-    </div >
+    </div>
   );
 }
