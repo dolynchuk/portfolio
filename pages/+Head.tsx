@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HeadDefault() {
   const base = import.meta.env.BASE_URL;
-  
+
   return (
     <>
       <meta charSet="UTF-8" />
@@ -30,5 +30,6 @@ export default function HeadDefault() {
         type="font/ttf"
         crossOrigin="anonymous"
       />
+    </>
   );
 }
