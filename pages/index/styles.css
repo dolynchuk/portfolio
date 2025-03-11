@@ -182,11 +182,36 @@
     }
 }
 
-
-.marquee {
+.marquee {  
+    will-change: transform;
+    margin-left: 16px;
     list-style: none;
     display: flex;
+    width: max-content;
+    flex: 1;
+    flex-direction: row;
+    animation: marquee 20s linear infinite;
+    animation-delay: 1s;
 }
+
+@keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+.marquee-items {
+    display: flex;
+    flex-direction: row;
+}
+
+.marquee li {
+    white-space: nowrap;
+}
+
 
 .mainLinks {
     padding: 16px;
