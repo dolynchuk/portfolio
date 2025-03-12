@@ -69,6 +69,7 @@ canvas {
     width: 120vw;
     will-change: transform;
     transition: all 4s;
+    filter: url(#pixelate2);
 }
 
 .imageNight {
