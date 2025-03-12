@@ -75,7 +75,7 @@ export function MainPageInfo() {
             </a>
           </div>
         </div>
-        <button className="arrowScroll" arial-label="Scroll down" ref={buttonRef} onClick={handleScrollClick}><ArrowScroll /></button>
+        <button className="arrowScroll" aria-label="Scroll down" ref={buttonRef} onClick={handleScrollClick}><ArrowScroll /></button>
       </section>
       <section className="careerSection">
         <h3 id="career" className="sectionHeader">My career path</h3>
