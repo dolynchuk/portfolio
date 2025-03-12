@@ -78,7 +78,6 @@ canvas {
 
 .heroContainerImage2.opaque {
     opacity: 1;
-    filter: url(#pixelate);
 }
 
 

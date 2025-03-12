@@ -47,22 +47,11 @@
     width: 100%;
 }
 
-@keyframes removePixelate {
-    from {
-        filter: url(#pixelate);
-    }
-
-    to {
-        filter: none;
-    }
-}
-
 .tools {
     display: flex;
     flex-direction: row;
     gap: 16px;
 }
-
 
 /* LAYOUT CHANGE */
 .mainPageRow {
