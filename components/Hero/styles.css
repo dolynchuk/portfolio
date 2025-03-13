@@ -60,7 +60,10 @@ canvas {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    animation: imageSlide 10s infinite alternate ease-in-out;
+    animation: imageSlide 10s infinite alternate ease-in-out, removePixelate2 0.1s forwards ease-in-out;
+    animation-delay: 1s, 0.7s;
+    animation-timeline: auto, auto;
+    animation-composition: add;
     z-index: -1;
     position: absolute;
     top: 0;
@@ -71,6 +74,7 @@ canvas {
     transition: all 4s;
     filter: url(#pixelate2);
 }
+
 
 .imageNight {
     opacity: 0;
