@@ -1,10 +1,12 @@
 import ReactGA from "react-ga4";
 import React from "react";
 
-ReactGA.initialize("G-V7PDVH0PW3");
-
 export default function HeadDefault() {
   const base = import.meta.env.BASE_URL;
+
+  React.useEffect(() => {
+    ReactGA.initialize("G-V7PDVH0PW3");
+  }, []);
 
   return (
     <>
