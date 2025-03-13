@@ -1,7 +1,4 @@
-
-
 import './styles.css';
-import '../style.css';
 import { Hero } from '../../components/Hero/Hero';
 import { Pixelate } from '../../components/Pixelate/Pixelate';
 import { MainPageInfo } from './MainPageInfo';
