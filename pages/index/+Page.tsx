@@ -1,6 +1,7 @@
 
 
 import './styles.css';
+import '../styles.css';
 import { Hero } from '../../components/Hero/Hero';
 import { Pixelate } from '../../components/Pixelate/Pixelate';
 import { MainPageInfo } from './MainPageInfo';

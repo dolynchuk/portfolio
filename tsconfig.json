@@ -16,8 +16,7 @@
       "ESNext"
     ],
     "types": [
-      "vite/client",
-      "vike-react"
+      "vite/client"
     ],
     "jsx": "preserve",
     "jsxImportSource": "react"
