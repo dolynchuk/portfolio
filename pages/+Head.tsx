@@ -6,6 +6,7 @@ export default function HeadDefault() {
 
   React.useEffect(() => {
     ReactGA.initialize("G-V7PDVH0PW3");
+    ReactGA.send({ hitType: "pageview", page: "/", title: "Index page" });
   }, []);
 
   return (
