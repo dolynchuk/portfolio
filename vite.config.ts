@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => {
     plugins: [vike({}), react({})],
     base: mode === "production" ? `/${repoName}/` : "/",
     build: {
+      cssCodeSplit: false,
       target: "es2022",
       rollupOptions: {
         output: {
