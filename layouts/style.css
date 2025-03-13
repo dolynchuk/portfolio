@@ -30,12 +30,6 @@
     font-display: swap;
 }
 
-@font-face {
-    font-family: 'KyivTypeTitling';
-    src: local('KyivTypeTitling-VarGX'), url('/font/KyivTypeTitling-VarGX.ttf');
-    font-display: swap;
-}
-
 * {
     box-sizing: border-box;
     margin: 0;

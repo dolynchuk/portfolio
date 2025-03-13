@@ -25,13 +25,6 @@ export default function HeadDefault() {
         type="font/ttf"
         crossOrigin="anonymous"
       />
-      <link
-        rel="preload"
-        href={`${base}font/KyivTypeTitling-VarGX.ttf`}
-        as="font"
-        type="font/ttf"
-        crossOrigin="anonymous"
-      />
     </>
   );
 }
