@@ -1,20 +1,54 @@
-import react from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
-import vike from "vike/plugin";
+import { defineConfig, PluginOption } from "vite";
 
-const repoName = "portfolio";
+const base = "/portfolio/";
+const canonical = "dolynchuk.github.io";
 
-export default defineConfig(({ mode }) => {
+const transformHtmlPlugin: (option: {
+  from: string;
+  to: string;
+}) => PluginOption = ({ from, to }) => ({
+  name: "html-transform",
+  transformIndexHtml: {
+    handler(html: string) {
+      return html.replaceAll(from, to);
+    },
+  },
+});
+
+export default defineConfig(({}) => {
   return {
-    plugins: [vike({}), react({})],
-    base: mode === "production" ? `/${repoName}/` : "/",
+    plugins: [
+      transformHtmlPlugin({
+        from: "{{BASE_URL}}",
+        to: base,
+      }),
+      transformHtmlPlugin({
+        from: "{{CANONICAL}}",
+        to: canonical,
+      }),
+    ],
+    base,
+    optimizeDeps: {
+      include: ["@splinetool/runtime"],
+      force: true,
+    },
     build: {
-      cssCodeSplit: false,
-      target: "es2022",
+      minify: "esbuild",
+
+      outDir: "./dist",
+      sourcemap: true,
+      chunkSizeWarningLimit: 5000,
+      commonjsOptions: {
+        transformMixedEsModules: true,
+      },
       rollupOptions: {
+        treeshake: true,
         output: {
-          manualChunks: () => {
-            return "everything";
+          manualChunks: (id) => {
+            if (id.includes("node_modules")) {
+              return "vendor";
+            }
+            return "bundle";
           },
         },
       },

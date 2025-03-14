@@ -1,32 +1,18 @@
 {
+  "name": "portfolio-app",
+  "private": false,
+  "version": "0.0.1",
+  "type": "module",
   "scripts": {
-    "dev": "vike  dev",
-    "build": "vike build",
-    "preview": "vike preview",
-    "lint": "eslint ."
-  },
-  "dependencies": {
-    "@splinetool/react-spline": "4.0.0",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-ga4": "^2.1.0"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "@eslint/js": "9.22.0",
-    "@types/react": "18.3.1",
-    "@types/react-dom": "18.3.1",
-    "@vitejs/plugin-react": "4.3.4",
-    "eslint": "9.22.0",
-    "eslint-config-prettier": "10.1.1",
-    "eslint-plugin-prettier": "5.2.3",
-    "eslint-plugin-react": "7.37.4",
-    "globals": "16.0.0",
-    "prettier": "3.5.3",
-    "typescript": "5.8.2",
-    "typescript-eslint": "8.26.0",
-    "vike": "0.4.224",
-    "vike-react": "^0.5.13",
-    "vite": "^6.2.1"
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0"
   },
-  "type": "module"
+  "dependencies": {
+    "@splinetool/runtime": "^1.9.77"
+  }
 }

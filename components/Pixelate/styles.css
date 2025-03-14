@@ -1,9 +1,0 @@
-@keyframes removePixelate {
-    from {
-      filter: url(#pixelate);
-    }
-    to {
-      filter: none;
-    }
-  }
-  

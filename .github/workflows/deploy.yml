@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change to your default branch if needed
+      - main # Change to your default branch if needed
 
   workflow_dispatch: # Allows manual triggering
 
@@ -35,7 +35,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/client
+          path: dist
 
   deploy:
     needs: build
