@@ -1,7 +1,7 @@
 import { defineConfig, PluginOption } from "vite";
 
 const base = "/portfolio/";
-const canonical = "dolynchuk.github.io";
+const canonical = "https://dolynchuk.github.io/portfolio/";
 
 const transformHtmlPlugin: (option: {
   from: string;
