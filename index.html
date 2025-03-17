@@ -53,7 +53,7 @@
         --primary-color: rgba(0, 87, 183, 1);
         --secondary-color: rgba(255, 204, 0, 1);
         --text-color: black;
-        --outline-color: green;
+        --outline-color: rgb(0, 255, 106);
         --border-color: black;
 
         --font-size-base: 16px;
@@ -983,13 +983,17 @@
       }
 
       .mainLinks a {
-        padding: 4px 8px;
+        padding: 16px 16px;
+        border-radius: 32px;
         font-size: var(--font-size-bigger);
         color: var(--text-color) !important;
         background: var(--secondary-color);
         font-weight: 800;
-        border: 2px solid black;
+        box-shadow: 3px 4px 9px 3px #00000082, inset 4px 6px 20px 0px white;
         text-align: center;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        user-select: none;
       }
 
       .mainLinks .mainLink {
@@ -1010,13 +1014,17 @@
       }
 
       .mainLinks a:hover {
-        background: white;
         color: var(--text-color) !important;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+        box-shadow: 0px 0px 9px 0px #00000082, inset 6px 6px 20px 0px white;
       }
 
       .mainLinks a:focus {
-        background: white;
         color: var(--text-color) !important;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+        box-shadow: 0px 0px 9px 0px #00000082, inset 6px 6px 20px 0px white;
       }
 
       .marquee li {
@@ -1089,7 +1097,7 @@
           line-height: var(--font-size-accent);
           width: 100%;
           white-space: nowrap;
-          padding: 4px 8px;
+          padding: 16px 16px;
         }
 
         .mainLinks {
@@ -1236,6 +1244,66 @@
           font-size: var(--font-size-h3);
           line-height: var(--font-size-h3);
         }
+      }
+      dialog[open] {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.3);
+        pointer-events: none;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        padding: 0px;
+        max-height: 100vh;
+      }
+
+      dialog img {
+        max-width: 1000px;
+        margin: 0 auto;
+        margin-bottom: 16px;
+        width: 100%;
+      }
+
+      .dialogHeader {
+        max-width: 1000px;
+        margin: 0 auto;
+        background-color: white;
+        border: 2px solid black;
+        margin-bottom: 32px;
+      }
+
+      .closeModal {
+        position: absolute;
+        top: 32px;
+        right: 40px;
+        padding: 8px;
+      }
+
+      dialog h2,
+      dialog p {
+        padding: 16px;
+        background-color: white;
+      }
+
+      dialog p {
+        margin-bottom: 16px;
+      }
+
+      .dialogContent {
+        pointer-events: all;
+        height: 100%;
+        overflow: auto;
+        padding: 40px;
+        background-color: transparent;
+      }
+      s ul li {
+        font-size: var(--font-size-bigger);
       }
     </style>
   </head>
@@ -1455,6 +1523,23 @@
           </section>
           <section class="careerSection">
             <h3 id="career" class="sectionHeader">My career path</h3>
+            <article class="card">
+              <h4 class="cardTitle">Projects with screenshots</h4>
+              <div class="description">
+                <p>
+                   <a href="#cortex" id="showCortex"
+                      >Cortex ML data management platform</a
+                    >
+                  </p>
+                  <p> <a href="#lun" id="showLun">lun.ua search website</a></p>
+                  <p> <a href="#bird" id="showBird"
+                    >Bird rent realtime price chart</a></p>
+                   
+                   
+                   
+                </ul>
+              </div>
+            </article>
             <article class="card">
               <h4 class="cardTitle">Wolt</h4>
               <p class="cardSubtitle">Senior Front-End Engineer</p>
@@ -1774,6 +1859,70 @@
             </ul>
           </div>
         </div>
+        <dialog id="cortexDialog">
+          <div class="dialogContent">
+            <div class="dialogHeader">
+              <h2>Cortex ML Data management platform</h2>
+              <p>
+                ML Learning platform that went from MVP project to platform for
+                learning algorithms that scaled to multiple countries
+              </p>
+              <p>
+                This app allowed to speed up R&D team and allowed single team to
+                develop algoritms trained for specific country situation, and
+                was scaled across Europe.
+              </p>
+              <p>
+                <button class="closeModal" aria-label="close modal">X</button>
+              </p>
+            </div>
+            <img src="/images/cortex_1.jpg" />
+            <img src="/images/cortex_2.jpg" />
+            <img src="/images/cortex_4.jpg" />
+          </div>
+        </dialog>
+        <dialog id="lunDialog">
+          <div class="dialogContent">
+            <div class="dialogHeader">
+              <h2>lun.ua search website</h2>
+              <p>
+                Biggest Ukrainian Prop-tech website with interactive 3D maps
+              </p>
+              <p>
+                Website went through full refactor from Jquery + PHP
+                architecture to new React SSR App with Python API. Maps engine
+                was migrated from Google Maps to MapBox. Website was redesigned
+                and with improved UX and new features it gained new users and
+                more ads revenue.
+              </p>
+              <p><a target="_blank" href="https://lun.ua">lun.ua</a></p>
+              <button class="closeModal" aria-label="close modal">X</button>
+            </div>
+            <img src="/images/lun_1.jpg" />
+            <img src="/images/lun_2.jpg" />
+            <img src="/images/lun_3.jpg" />
+          </div>
+        </dialog>
+        <dialog id="birdDialog">
+          <div class="dialogContent">
+            <div class="dialogHeader">
+              <h2>Bird rent realtime price chart</h2>
+              <p>
+                Page with realtime statistics for flat rent prices in biggest
+                Ukrainian cities
+              </p>
+              <p>
+                Simple website for prices for rent for 1, 2 and 3 rooms
+                appartments. Done as promotional website for bird rent app.
+              </p>
+              <p><a target="_blank" href="https://birdrent.com/statistics">birdrent.com</a></p>
+              
+              <button class="closeModal" aria-label="close modal">X</button>
+            </div>
+            <img src="/images/bird_1.jpg" />
+            <img src="/images/bird_2.jpg" />
+          </div>
+        </dialog>
       </main>
     </div>
     <script type="module" src="/src/main.ts"></script>
