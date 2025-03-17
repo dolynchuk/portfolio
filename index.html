@@ -1263,6 +1263,8 @@
         max-height: 100vh;
       }
 
+
+
       dialog img {
         max-width: 1000px;
         margin: 0 auto;
@@ -1282,7 +1284,15 @@
         position: absolute;
         top: 32px;
         right: 40px;
-        padding: 8px;
+        padding: 16px;
+        width: 52px;
+        height: 52px;
+        border-radius:50%; 
+      }
+
+      .closeModal img {
+        height: 20px;
+        width: 20px;
       }
 
       dialog h2,
@@ -1302,8 +1312,17 @@
         padding: 40px;
         background-color: transparent;
       }
+      @media screen and (max-width: 1000px) {
+        .dialogContent {
+          padding: 40px 16px; 
+        }
+      }
       s ul li {
         font-size: var(--font-size-bigger);
+      }
+
+      html {
+        -webkit-tap-highlight-color: transparent;
       }
     </style>
   </head>
@@ -1873,7 +1892,9 @@
                 was scaled across Europe.
               </p>
               <p>
-                <button class="closeModal" aria-label="close modal">X</button>
+                <button class="closeModal" aria-label="close modal">
+                  <img src="/close.svg" />
+                </button>
               </p>
             </div>
             <img src="/images/cortex_1.jpg" />
@@ -1896,7 +1917,7 @@
                 more ads revenue.
               </p>
               <p><a target="_blank" href="https://lun.ua">lun.ua</a></p>
-              <button class="closeModal" aria-label="close modal">X</button>
+              <button class="closeModal" aria-label="close modal"><img src="close.svg" /></button>
             </div>
             <img src="/images/lun_1.jpg" />
             <img src="/images/lun_2.jpg" />
@@ -1917,7 +1938,7 @@
               </p>
               <p><a target="_blank" href="https://birdrent.com/statistics">birdrent.com</a></p>
               
-              <button class="closeModal" aria-label="close modal">X</button>
+              <button class="closeModal" aria-label="close modal"><img src="close.svg" /></button>
             </div>
             <img src="/images/bird_1.jpg" />
             <img src="/images/bird_2.jpg" />
