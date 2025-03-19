@@ -116,6 +116,7 @@ const init = () => {
   });
 
   window.addEventListener("scroll", handleScroll, { passive: true });
+  handleScroll();
   if (elements.scrollButton) {
     elements.scrollButton.addEventListener("click", () => {
       gtag("event", "click", {

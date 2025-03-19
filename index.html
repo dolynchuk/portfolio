@@ -209,7 +209,8 @@
       .cardTitle {
         font-size: var(--font-size-bigger);
         line-height: var(--font-size-bigger);
-        padding: 4px 8px;
+        padding: 8px;
+        padding-top: 16px;
         padding-bottom: 16px;
         font-weight: bold;
       }
@@ -644,7 +645,6 @@
         margin-right: 0;
         box-sizing: border-box;
         position: relative;
-        pointer-events: none;
       }
 
       .mainPageInfo > section {
@@ -823,6 +823,8 @@
       }
 
       .marquee {
+        pointer-events: none;
+        user-select: none;
         will-change: transform;
         margin-left: 16px;
         list-style: none;
@@ -878,6 +880,7 @@
       .sectionHeader {
         color: var(--secondary-color);
         -webkit-text-stroke-width: 1px;
+        margin-top: 16px;
         -webkit-text-stroke-color: black;
         font-weight: 800;
         font-size: var(--font-size-h2);
@@ -959,6 +962,10 @@
         position: relative;
         max-width: 600px;
         pointer-events: none !important;
+      }
+
+      .landingSection .mainMessage {
+        pointer-events: all !important;
       }
 
       .teachingSection {
@@ -1117,7 +1124,7 @@
       .mainMessageContent {
         background-color: white;
         border: 2px solid black;
-        padding: 4px 0;
+        padding: 8px 0;
       }
 
       .mainMessage p {
@@ -1193,7 +1200,8 @@
         line-height: var(--font-size-bigger);
         background-color: white;
         border-top: 2px solid black;
-        margin-bottom: 8px;
+        padding-top: 12px;
+        margin-bottom: 12px;
       }
 
       @media screen and (max-width: 1000px) {
@@ -1279,11 +1287,15 @@
         border: 2px solid black;
         margin-bottom: 32px;
       }
+      #secondImg {
+        z-index: 0;
+        pointer-events: none;
+      }
 
       .closeModal {
         position: absolute;
-        top: 32px;
-        right: 40px;
+        top: 16px;
+        right: 32px;
         padding: 16px;
         width: 52px;
         height: 52px;
@@ -1300,11 +1312,6 @@
         padding: 16px;
         background-color: white;
       }
-
-      dialog p {
-        margin-bottom: 16px;
-      }
-
       .dialogContent {
         pointer-events: all;
         height: 100%;
@@ -1543,16 +1550,16 @@
           <section class="careerSection">
             <h3 id="career" class="sectionHeader">My career path</h3>
             <article class="card">
-              <h4 class="cardTitle">Projects with screenshots</h4>
+              <h4 class="cardTitle">Projects showcase</h4>
               <div class="description">
                 <p>
                    <a href="#cortex" id="showCortex"
-                      >Cortex ML data management platform</a
+                      >Cortex ML data management platform →</a
                     >
                   </p>
-                  <p> <a href="#lun" id="showLun">lun.ua search website</a></p>
+                  <p> <a href="#lun" id="showLun">lun.ua search website →</a></p>
                   <p> <a href="#bird" id="showBird"
-                    >Bird rent realtime price chart</a></p>
+                    >Bird rent realtime price chart →</a></p>
                    
                    
                    
@@ -1891,15 +1898,13 @@
                 develop algoritms trained for specific country situation, and
                 was scaled across Europe.
               </p>
-              <p>
                 <button class="closeModal" aria-label="close modal">
-                  <img src="/close.svg" />
+                  <img  loading="lazy" src="/close.svg" />
                 </button>
-              </p>
             </div>
-            <img src="/images/cortex_1.jpg" />
-            <img src="/images/cortex_2.jpg" />
-            <img src="/images/cortex_4.jpg" />
+            <img loading="lazy" src="/images/cortex_1.jpg" />
+            <img  loading="lazy" src="/images/cortex_2.png" />
+            <img  loading="lazy" src="/images/cortex_4.jpg" />
           </div>
         </dialog>
         <dialog id="lunDialog">
@@ -1919,9 +1924,9 @@
               <p><a target="_blank" href="https://lun.ua">lun.ua</a></p>
               <button class="closeModal" aria-label="close modal"><img src="close.svg" /></button>
             </div>
-            <img src="/images/lun_1.jpg" />
-            <img src="/images/lun_2.jpg" />
-            <img src="/images/lun_3.jpg" />
+            <img  loading="lazy" src="/images/lun_1.jpg" />
+            <img   loading="lazy" src="/images/lun_2.jpg" />
+            <img  loading="lazy" src="/images/lun_3.jpg" />
           </div>
         </dialog>
         <dialog id="birdDialog">
@@ -1933,15 +1938,16 @@
                 Ukrainian cities
               </p>
               <p>
-                Simple website for prices for rent for 1, 2 and 3 rooms
-                appartments. Done as promotional website for bird rent app.
+                Website with statistics for prices for rent for 1, 2 and 3 room
+                appartments. Done as promotional website for bird rent app and grew in popularity.
+                Now its a separate service that people use to check prices.
               </p>
               <p><a target="_blank" href="https://birdrent.com/statistics">birdrent.com</a></p>
               
               <button class="closeModal" aria-label="close modal"><img src="close.svg" /></button>
             </div>
-            <img src="/images/bird_1.jpg" />
-            <img src="/images/bird_2.jpg" />
+            <img  loading="lazy" src="/images/bird_1.jpg" />
+            <img  loading="lazy" src="/images/bird_2.jpg" />
           </div>
         </dialog>
       </main>
