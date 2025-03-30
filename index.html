@@ -553,6 +553,7 @@
 
       canvas {
         overscroll-behavior: contain;
+        image-rendering: pixelated;
       }
 
       @media (min-aspect-ratio: 4/3) {
@@ -780,7 +781,7 @@
 
       .spline {
         opacity: 0;
-        transition: all 2s ease-in;
+        transition: opacity 2s ease-in;
         position: absolute;
         top: 0;
         right: 0;
@@ -1112,7 +1113,8 @@
           justify-content: center;
         }
         canvas {
-          height: calc(100% + 64px) !important;
+          height: 100% !important;
+          width: 100% !important;
         }
 
         footer {
@@ -1495,7 +1497,7 @@
               </div>
             </h1>
             <h2 class="secondTitle">
-              <span class="jobTitle">Front End Engineer</span>
+              <span class="jobTitle">Frontend Engineer</span>
             </h2>
             <div class="mainMessageStack">
               <div class="mainMessage">
@@ -1570,7 +1572,7 @@
             </article>
             <article class="card">
               <h4 class="cardTitle">Wolt</h4>
-              <p class="cardSubtitle">Senior Front-End Engineer</p>
+              <p class="cardSubtitle">Senior Frontend Engineer</p>
               <h5 class="teamName">Inventory Routing & Replenishment team</h5>
               <span class="years">2022-2025</span>
               <div class="description">
@@ -1587,7 +1589,7 @@
             </article>
             <article class="card">
               <h4 class="cardTitle">DeliveryHero</h4>
-              <p class="cardSubtitle">Senior Full-Stack Engineer / DevOps</p>
+              <p class="cardSubtitle">Senior Full Stack Engineer / DevOps</p>
               <h5 class="teamName">Middleware team</h5>
               <span class="years">2021-2022</span>
               <div class="description">
@@ -1604,7 +1606,7 @@
             </article>
             <article class="card">
               <h4 class="cardTitle">lun.ua</h4>
-              <p class="cardSubtitle">Full-Stack Engineer</p>
+              <p class="cardSubtitle">Full Stack Engineer</p>
               <h5 class="teamName">Cortex Data Science / ML research team</h5>
               <span class="years">2019 - 2021</span>
               <div class="description">
@@ -1627,7 +1629,7 @@
             </article>
             <article class="card">
               <h4 class="cardTitle">lun.ua</h4>
-              <p class="cardSubtitle">Front-End Engineer</p>
+              <p class="cardSubtitle">Frontend Engineer</p>
               <h5 class="teamName">Search team</h5>
               <span class="years">2017 - 2019</span>
               <div class="description">
@@ -1686,7 +1688,7 @@
                 Lunoteka student coworking at Kyiv National University
               </h4>
               <p class="cardSubtitle">
-                Lecture "everything that Front-End developer needs in 2019"
+                Lecture "everything that Frontend developer needs in 2019"
               </p>
               <p class="faculty">
                 Faculty of Radiophysics and Computer Science
@@ -1695,7 +1697,7 @@
               <div class="description">
                 <p>
                   2 Hour lecture with demos, memes and serious charts for
-                  students who want to start their journey becoming Front End
+                  students who want to start their journey becoming Frontend
                   Engineers
                 </p>
                 <p>
@@ -1713,14 +1715,14 @@
                 CHYTALKA student coworking at Kyiv National University
               </h4>
               <p class="cardSubtitle">
-                Online Lecture "Design and Front-End. Moving button for 2 hours"
+                Online Lecture "Design and Frontend. Moving button for 2 hours"
               </p>
               <p class="faculty">Faculty of Cybernetics</p>
               <p class="years">2020</p>
               <div class="description">
                 <p>
                   2 Hour online lecture with discussion and presentation about
-                  collaboration between Designer and Front-End Engineer
+                  collaboration between Designer and Frontend Engineer
                 </p>
                 <p>Done in collaboration with Alina Skalkina, UI/UX Designer</p>
                 <p>
@@ -1823,7 +1825,7 @@
               <div class="loaderText" id="loaderText">Loading</div>
             </div>
             <div class="spline" id="spline">
-              <canvas id="splineCanvas" class="splineCanvas"></canvas>
+              <canvas id="sceneCanvas" class="sceneCanvas"></canvas>
             </div>
           </div>
         </div>
@@ -1841,6 +1843,7 @@
               <li>MapBox</li>
               <li>Google Maps</li>
               <li>Google Analytics</li>
+              <li>Tensorflow</li>
               <li>.NET</li>
               <li>MySQL</li>
               <li>MongoDB</li>
@@ -1869,6 +1872,7 @@
               <li>MapBox</li>
               <li>Google Maps</li>
               <li>Google Analytics</li>
+              <li>Tensorflow</li>
               <li>.NET</li>
               <li>MySQL</li>
               <li>MongoDB</li>

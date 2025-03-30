@@ -1,21 +1,11 @@
-import { Application } from "@splinetool/runtime";
-
-const dataLayer =
-  (window as Window & typeof globalThis & { dataLayer: any[] | undefined })
-    .dataLayer || [];
-function gtag(
-  _p0: string,
-  _p1: Date | string,
-  _p2?: { event_category: string; event_label?: string }
-) {
-  dataLayer.push(arguments);
-}
-gtag("js", new Date());
-gtag("config", "G-V7PDVH0PW3");
+import * as THREE from 'three';
+import { EffectComposer, RenderPass, RGBShiftShader, ShaderPass, } from 'three/examples/jsm/Addons.js';
+import { loadPlayerModel } from './modelLoader';
+import { gtag } from './analytics';
 
 const elements = {
-  canvas: document.getElementById("splineCanvas") as HTMLCanvasElement | null,
-  splineEl: document.getElementById("spline") as HTMLElement | null,
+  canvas: document.getElementById("sceneCanvas") as HTMLCanvasElement | null,
+  canvasContainerEl: document.getElementById("spline") as HTMLElement | null,
   loaderText: document.getElementById("loaderText") as HTMLElement | null,
   imageNight: document.getElementById("imageNight") as HTMLElement | null,
   secondImg: document.getElementById("secondImg") as HTMLImageElement | null,
@@ -40,29 +30,91 @@ const elements = {
   birdDialog: document.getElementById("birdDialog") as HTMLDialogElement | null,
 };
 
-async function initSpline() {
-  if (!elements.canvas) return;
-
-  try {
-    const spline = new Application(elements.canvas);
-    await spline.load(
-      "https://prod.spline.design/53Ay5avPimaRMEOn/scene.splinecode"
-    );
-
-    elements.splineEl?.classList.add("splineLoaded");
-    elements.loaderText?.classList.add("hidden");
-
-    elements.canvas.addEventListener(
-      "wheel",
-      (event: WheelEvent) => {
-        window.scrollBy({ top: event.deltaY });
-      },
-      { passive: true }
-    );
-  } catch (error) {
-    console.error("Spline initialization failed:", error);
+document.addEventListener("DOMContentLoaded", () => {
+  if (!elements.canvasContainerEl || !elements.canvas) {
+    console.error(".spline element not found");
+    return;
   }
-}
+  const { width, height } = elements.canvasContainerEl.getBoundingClientRect();
+
+  const renderer = new THREE.WebGLRenderer({ canvas: elements.canvas, alpha: true, antialias: false, preserveDrawingBuffer: true, });
+  renderer.setSize(width, height);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+  camera.position.set(10, 8, -4);
+  camera.lookAt(new THREE.Vector3(0,5.5, 0));
+
+  const composer = new EffectComposer(renderer);
+  composer.setSize(width, height);
+  
+  const renderPass = new RenderPass(scene, camera);
+  composer.addPass(renderPass);
+
+  renderer.setClearColor(0x000000, 0); 
+
+  const animatePlayer = loadPlayerModel("/portfolio/player.gltf", scene);
+
+  scene.background = null;
+
+  const computerLight =  new THREE.DirectionalLight(0xffffff, 3);
+  scene.add(
+    computerLight
+  )
+  computerLight.position.set(0.01, -0.05, 0)
+  computerLight.lookAt(-10, 0.1, -10);
+
+  const light =   new THREE.SpotLight('white', 10, 100, Math.PI / 2, 0, 1);
+  light.position.set(0, 15, 0);
+
+  light.lookAt(0,0,0);
+  scene.add(
+   light
+  )
+
+  const ambientLight = new THREE.AmbientLight('white', 2);
+  scene.add(ambientLight)
+
+  const rgbShiftPass = new ShaderPass(RGBShiftShader);
+  rgbShiftPass.uniforms['amount'].value = 0.004;
+  composer.addPass(rgbShiftPass);
+
+  elements.loaderText?.classList.add("hidden");
+
+  elements.canvasContainerEl?.classList.add("splineLoaded");
+  elements.loaderText?.classList.add("hidden");
+
+  function resize() {
+      requestAnimationFrame(() => {
+        if (!elements.canvasContainerEl) {
+          return;
+        }
+        const { width, height } = elements.canvasContainerEl?.getBoundingClientRect();
+        renderer.setSize(width, height);
+  
+        const LOW_RES_SCALE = 0.25;
+        renderer.setSize(width * LOW_RES_SCALE, height * LOW_RES_SCALE, false);
+        renderer.domElement.style.imageRendering = "pixelated";
+    
+        composer.setSize(width, height); // Update composer size too
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+      })
+  }
+
+  window.addEventListener("resize", resize);
+  resize();
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    animatePlayer();
+
+    composer.render();
+  }
+
+  animate();
+});
 
 let ticking = false;
 let lastScrollY = 0;
@@ -111,10 +163,6 @@ const handleScroll = () => {
 };
 
 const init = () => {
-  requestAnimationFrame(() => {
-    initSpline();
-  });
-
   window.addEventListener("scroll", handleScroll, { passive: true });
   handleScroll();
   if (elements.scrollButton) {
